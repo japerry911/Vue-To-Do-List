@@ -17,7 +17,10 @@
             }
         },
         methods: {
-            
+            deleteTask(id) {
+                this.$store.commit('deleteTask', { id });
+                this.$router.push('/task-list');
+            }
         }
     }
 </script>
