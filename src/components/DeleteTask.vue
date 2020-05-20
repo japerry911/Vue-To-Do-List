@@ -17,8 +17,8 @@
             }
         },
         methods: {
-            deleteTask(id) {
-                this.$store.commit('deleteTask', { id });
+            deleteTask() {
+                this.$store.commit('deleteTask', { id: this.taskObject.id.toString() });
                 this.$router.push('/task-list');
             }
         }
