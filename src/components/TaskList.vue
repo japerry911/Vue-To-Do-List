@@ -9,13 +9,10 @@
     import Task from './Task.vue';
 
     export default {
-        data() {
-            return {
-                tasks: [
-                    { id: 1, title: 'Sample Task 1', content: 'Walk the dog.' },
-                    { id: 2, title: 'Sample Task 2', content: 'Do Load of Laundry' }
-                ]
-            };
+        computed: {
+            tasks() {
+                return this.$store.state.tasks;
+            }
         },
         components: {
             task: Task

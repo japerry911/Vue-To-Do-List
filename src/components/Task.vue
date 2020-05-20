@@ -25,7 +25,7 @@
                 this.$router.push(`/tasks/${this.taskObject.id}/edit`);
             },
             deleteTask() {
-                this.$router.push(`/tasks/${this.taskObject.id}/delete`);
+                this.$router.push(`/tasks/${this.taskObject.id}/delete`)
             }
         }
     }
