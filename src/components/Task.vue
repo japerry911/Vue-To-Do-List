@@ -1,7 +1,7 @@
 <template>
     <div class='task-div'>
-        <p class='task-title'>Task</p>
-        <p class='task-description'>Task DescriptionTask DescriptionTask DescriptionTask Description</p>
+        <p class='task-title'>{{ taskObject.title }}</p>
+        <p class='task-description'>{{ taskObject.content }}</p>
         <div class='icons-div'>
             <svg @click='editTask' class="bi bi-pencil-square svg-clickable" width="2em" height="2em" viewBox="0 0 16 16" fill="limegreen" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"/>
@@ -17,12 +17,15 @@
 
 <script>
     export default {
+        props: {
+            taskObject: Object
+        },
         methods: {
             editTask() {
-                alert('Edit action');
+                this.$router.push(`/tasks/${this.taskObject.id}/edit`);
             },
             deleteTask() {
-                alert('Delete action');
+                this.$router.push(`/tasks/${this.taskObject.id}/delete`);
             }
         }
     }
@@ -31,19 +34,20 @@
 <style scoped>
     .svg-clickable {
         cursor: pointer;
+        margin: 0 1rem;
     }
 
     .task-title {
         margin: 0;
         font-size: 2.5rem;
         font-weight: bold;
-        width: 10%;
+        width: 20%;
     }
 
     .task-description {
         margin: 0;
         font-size: 1.55rem;
-        width: 80%;
+        width: 60%;
         text-align: center;
     }
 
@@ -57,9 +61,9 @@
     }
 
     .icons-div {
-        width: 10%;
+        width: 20%;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center
     }
 </style>
