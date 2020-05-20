@@ -8,6 +8,7 @@ export const routes = [
     { path: '/task-list', component: TaskList },
     { path: '/tasks/:id/edit', component: EditTask },
     { path: '/tasks/:id/delete', component: DeleteTask },
+    { path: '/add-task', component: AddTask },
     { path: '/', component: Home },
     { path: '*', redirect: '/' }
 ];

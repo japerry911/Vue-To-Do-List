@@ -2,15 +2,19 @@
   <div class='main-div'>
       <h1>Task App</h1>
       <hr>
+      <app-header></app-header>
+      <hr>
       <router-view></router-view>
   </div>
 </template>
 
 <script>
   import TaskList from './components/TaskList.vue';
+  import Header from './components/Header.vue';
 
   export default {
     components: {
+      appHeader: Header,
       taskList: TaskList
     }
   }
