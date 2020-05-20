@@ -1,6 +1,8 @@
 # to-do-list2
 
-> A Vue.js project
+To Do List - developed by Jack Perry
+ 
+- Technologies Used: Vue, Vue-Router, Vuex
 
 ## Build Setup
 
