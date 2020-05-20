@@ -48,10 +48,6 @@
         text-align: center;
     }
 
-    .intro-paragraph {
-        font-size: 2.25rem;
-    }
-
     .main-delete-div {
         display: flex;
         flex-direction: column;
