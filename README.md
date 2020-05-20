@@ -1,10 +1,10 @@
-# to-do-list2
+## To Do List
 
 To Do List - developed by Jack Perry
  
 - Technologies Used: Vue, Vue-Router, Vuex
 
-## Build Setup
+### Build Setup
 
 ``` bash
 # install dependencies
