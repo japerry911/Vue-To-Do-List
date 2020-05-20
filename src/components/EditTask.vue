@@ -41,12 +41,18 @@
         },
         mounted() {
             const currentTask = this.$store.getters.task(this.$route.params.id);
-            console.log(currentTask);
+
             this.task.taskTitle = currentTask.title;
             this.task.taskContent = currentTask.content;
         },
         methods: {
             submitted() {
+                if (this.task.taskTitle === '' || this.task.taskContent === '') {
+                    alert('Please fill in both Task Title and Task Content.');
+                } else {
+                    this.$store.commit('updateTask', { id: this.$route.params.id, title: this.task.taskTitle, content: this.task.taskContent });
+                    this.$router.push('/task-list');
+                }
             }
         }
     }

@@ -15,14 +15,16 @@ export const store = new Vuex.Store({
     },
     mutations: {
         deleteTask(state, { id }) {
-            console.log(state.tasks);
-            console.log(id);
-            console.log(state.tasks.findIndex(taskObject => taskObject.id === id));
             state.tasks.splice(state.tasks.findIndex(taskObject => taskObject.id === id), 1);
         },
         addTask(state, payload) {
             const id = Math.floor(Math.random() * 100000).toString();
             state.tasks.push({ id, title: payload.taskTitle, content: payload.taskContent });
+        },
+        updateTask(state, payload) {
+            const indexToUpdate = state.tasks.findIndex(taskObject => taskObject.id === payload.id);
+
+            state.tasks[indexToUpdate] = { id: payload.id, title: payload.title, content: payload.content };
         }
     }
 });
